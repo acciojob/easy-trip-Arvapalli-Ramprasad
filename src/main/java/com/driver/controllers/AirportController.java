@@ -15,14 +15,16 @@ import java.util.Map;
 import java.util.Objects;
 
 @RestController
+@RequestMapping("airport")
 public class AirportController {
+    AirPortService airPortService = new AirPortService();
     @PostMapping("/add_airport")
     public String addAirport(@RequestBody Airport airport){
 
         //Simply add airport details to your database
         //Return a String message "SUCCESS"
-
-        return "SUCCESS";
+         airPortService.addAirPort(airport);
+         return "SUCCESS";
     }
 
     @GetMapping("/get-largest-aiport")
