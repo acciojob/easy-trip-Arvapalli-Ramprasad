@@ -1,6 +1,7 @@
 package com.driver.controllers;
 
 import com.driver.model.Airport;
+import com.driver.model.Passenger;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ import java.util.HashMap;
 @Repository
 public class AirRepository {
     public HashMap<String, Airport> airportHashMap = new HashMap<>();
+    public HashMap<Integer,Passenger> passengerHashMap = new HashMap<>();
 
     public void addAirPort(Airport airport){
         String key = airport.getAirportName();
@@ -29,6 +31,11 @@ public class AirRepository {
         }
         Collections.sort(arr);
         return arr.get(0);
+    }
+    public String addPassenger(Passenger passenger){
+        int key = passenger.getPassengerId();
+        passengerHashMap.put(key,passenger);
+        return "SUCCESS";
     }
 
 }

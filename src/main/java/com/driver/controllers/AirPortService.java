@@ -1,6 +1,7 @@
 package com.driver.controllers;
 
 import com.driver.model.Airport;
+import com.driver.model.Passenger;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -11,5 +12,8 @@ public class AirPortService {
     }
     public String getLargestAirPort(){
         return airRepository.getLargestAirPort();
+    }
+    public String addPassenger(Passenger passenger){
+        return airRepository.addPassenger(passenger);
     }
 }
