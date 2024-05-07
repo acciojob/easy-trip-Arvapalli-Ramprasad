@@ -102,7 +102,7 @@ public class AirportController {
     public String addFlight(@RequestBody Flight flight){
 
         //Return a "SUCCESS" message string after adding a flight.
-       return null;
+       return airPortService.addFlight(flight);
     }
 
 

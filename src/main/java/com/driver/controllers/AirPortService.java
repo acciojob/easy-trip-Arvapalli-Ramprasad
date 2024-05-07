@@ -1,6 +1,7 @@
 package com.driver.controllers;
 
 import com.driver.model.Airport;
+import com.driver.model.Flight;
 import com.driver.model.Passenger;
 import org.springframework.stereotype.Service;
 
@@ -15,5 +16,8 @@ public class AirPortService {
     }
     public String addPassenger(Passenger passenger){
         return airRepository.addPassenger(passenger);
+    }
+    public String addFlight(Flight flight){
+        return airRepository.addFlight(flight);
     }
 }
