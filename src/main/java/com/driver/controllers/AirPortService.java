@@ -9,4 +9,7 @@ public class AirPortService {
     public void addAirPort(Airport airport){
         airRepository.addAirPort(airport);
     }
+    public String getLargestAirPort(){
+        return airRepository.getLargestAirPort();
+    }
 }
