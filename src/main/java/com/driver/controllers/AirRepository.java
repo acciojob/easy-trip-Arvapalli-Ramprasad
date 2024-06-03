@@ -1,14 +1,11 @@
 package com.driver.controllers;
-
 import com.driver.model.Airport;
 import com.driver.model.Flight;
 import com.driver.model.Passenger;
 import org.springframework.stereotype.Repository;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-
 @Repository
 public class AirRepository {
     public HashMap<String, Airport> airportHashMap = new HashMap<>();
@@ -22,10 +19,11 @@ public class AirRepository {
 
     public String getLargestAirPort(){
         ArrayList<String> arr = new ArrayList<>();
+        int max = Integer.MIN_VALUE;
         for(String key:airportHashMap.keySet()){
             Airport airport = airportHashMap.get(key);
             int noOfTerminals = airport.getNoOfTerminals();
-            int max = Integer.MIN_VALUE;
+
             if(noOfTerminals>=max){
                 max = noOfTerminals;
                 arr.add(airport.getAirportName());
